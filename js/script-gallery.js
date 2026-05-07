@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxTitle = lightbox.querySelector('.lightbox-title');
     const lightboxYear = lightbox.querySelector('.lightbox-year');
     const lightboxCategory = lightbox.querySelector('.lightbox-category');
+    const lightboxDescription = lightbox.querySelector('.lightbox-description');
     const lightboxClose = lightbox.querySelector('.lightbox-close');
     const lightboxPrev = lightbox.querySelector('.lightbox-prev');
     const lightboxNext = lightbox.querySelector('.lightbox-next');
@@ -115,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const year = item.querySelector('.artwork-year').textContent;
         const category = item.querySelector('.artwork-category').textContent;
         const number = item.querySelector('.artwork-number').textContent;
+        const description = item.getAttribute('data-description') || '';
 
         if (img && !img.parentElement.classList.contains('placeholder')) {
             lightboxImage.src = img.src;
@@ -122,6 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
             lightboxTitle.textContent = title;
             lightboxYear.textContent = year;
             lightboxCategory.textContent = category;
+            if (lightboxDescription) {
+                lightboxDescription.textContent = description;
+                lightboxDescription.style.display = description ? 'block' : 'none';
+            }
             
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';

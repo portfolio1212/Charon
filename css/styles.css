@@ -320,8 +320,8 @@ body {
 
 .glitch {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 10vw, 8rem);
-    font-weight: 900;
+    font-size: clamp(1rem, 10vw, 8rem);
+    font-weight: 600;
     text-transform: uppercase;
     position: relative;
     letter-spacing: 0.1em;
@@ -487,7 +487,7 @@ body {
 
 .gallery-masonry {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -561,7 +561,7 @@ body {
 
 .card-title {
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: 1.0rem;
     font-weight: 700;
     letter-spacing: 0.1em;
 }
@@ -922,7 +922,7 @@ body {
 }
 
 .modal-number {
-    font-size: 3rem;
+    font-size: 1.5rem;
     opacity: 0.3;
 }
 
@@ -1000,7 +1000,7 @@ body {
     }
 
     .gallery-masonry {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     }
 
     .profile-card {
@@ -1031,6 +1031,15 @@ body {
         font-size: 3rem;
     }
 
+    .section {
+        padding: 6rem 1.25rem;
+    }
+
+    .gallery-masonry {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
     .social-grid {
         gap: 2rem;
     }
@@ -1056,5 +1065,25 @@ body {
     .moon {
         width: 100px;
         height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 5rem 1rem;
+    }
+
+    .gallery-masonry {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-card {
+        aspect-ratio: 4/5;
+    }
+
+    .view-all-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
